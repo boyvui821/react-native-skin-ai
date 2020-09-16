@@ -10,6 +10,7 @@ import {
 import Result from '../../Components/Result';
 import LoadImage from '../../Components/LoadImage';
 import Header from '../../Container/CoreHeader/index';
+import {width} from '../../Common/styles';
 
 class ResultScreen extends React.Component {
   backAction = () => {
@@ -19,22 +20,42 @@ class ResultScreen extends React.Component {
   };
 
   render() {
-    // console.log('transferData', this.props.transferData);
+    // console.log('transferData', this.props.transferData.facedata.generalResult);
+    // const {dataTransfer} = this.props;
     return (
       <View>
         <Header title={'AI Skin Analysis'} leftAction={this.backAction} />
         <ScrollView
           style={{
             position: 'relative',
-            padding: 10,
+            padding: width(1),
             height: '90%',
             paddingBottom: 0,
             backgroundColor: 'transparent',
           }}>
           <View style={{position: 'relative', paddingBottom: 40}}>
-            <LoadImage />
-            <Result />
-            <Result />
+            <LoadImage
+              dataTransfer={this.props.transferData.facedata}
+              language={this.props.language}
+            />
+            <Result
+              dataTransfer={this.props.transferData.facedata.generalResult}
+              language={this.props.language}
+            />
+            <Result
+              dataTransfer={this.props.transferData.facedata.specialResult}
+              language={this.props.language}
+            />
+            <Result
+              dataTransfer={this.props.transferData.facedata.generalConclusion}
+              language={this.props.language}
+            />
+
+            <Result
+              dataTransfer={this.props.transferData.facedata.specialConclusion}
+              language={this.props.language}
+              special={true}
+            />
           </View>
         </ScrollView>
       </View>
