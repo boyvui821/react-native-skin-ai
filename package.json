@@ -1,6 +1,6 @@
 {
   "name": "react-native-skin-ai",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Skin AI SDK for react native platform.",
   "main": "index.js",
   "scripts": {
