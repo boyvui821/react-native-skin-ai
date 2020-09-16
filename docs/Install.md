@@ -68,8 +68,7 @@ Add the required permissions in `AndroidManifest.xml`:
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 ```
 
-### Android (Optional)
-
+### Android
 In folder android/app/build.gradle : add three line
 ```
  defaultConfig {
